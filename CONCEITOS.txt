@@ -1,0 +1,32 @@
+- O computador interpreta as imagens digitais como uma matriz onde cada elemento é um pixel.
+
+Áreas da Visão Computacional:
+    -> Reconhecimento Facial;
+    -> Fotogrametria (medição de tamanhos e distâncias a partir de uma imagem);
+    -> Classificação de imagens.
+    -> Recuperação de Informação Visual
+
+Recuperação de Informação Visual:
+    Consiste em pegar uma imagem, compara-la com um banco de imagens já fornecidos e devolver
+imagens (do banco de imagens) que se aproximem da imagem fornecida.
+
+Como analisar imagens:
+    Três Características Básicas:
+        -> Cor dos Pixels
+        -> Textura (padronização de pixels)
+        -> Forma (silhueta do objeto que está na imagem)
+
+- Imagens em Nível-de-Cinza (Preto e Branco) são representadas por apenas uma matriz,
+enquanto imagens coloridas são representadas por n matrizes, cada uma por espaço de cor (RGB).
+
+Como calcular a similariedade entre historiogramas:
+    -> Comparar a distância euclidiana:
+        - Quanto menor a distância, mais similar uma imagem é da outra.
+        - Se a distância for igual a 0, as imagens são idênticas.
+        - Antes de comparar os histogramas, é necessário normalizar as duas imagens 
+pelo Min-Max:
+            * H_normalizado = (histograma-min(histograma))/max(histograma)-min(histograma)
+            * Para calcular o max e min dos histogramas, utilizamos a função amax(hist) e 
+amin(hist) do módulo numpy.
+        - Para calcular a distância euclidiana entre imagens que não estão em escala de cinza,
+é necessário calcula a DE de cada canal de cor e depois fazer a média aritmetica deles.
