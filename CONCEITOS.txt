@@ -39,3 +39,23 @@ amin(hist) do módulo numpy.
 ---------------------------------------------------------------------------------------------- 
 TEXTURAS:
 - Textura se refere à um padrão na distribuição espacialdos pixels na imagem.
+
+Como utilizar e como funciona a técnica LBP:
+    -> Transformar a imagem para Escala-de-Cinza e depois transformar a imagem para o padrão
+LBP. 
+    -> Fazer o histograma da imagem em padrão LBP.
+
+----------------------------------------------------------------------------------------------
+IMAGENS BINÁRIAS:
+- Imagens binárias são aquelas que possuem apenas duas cores.
+
+Informações possíveis de serem extraídas de uma imagem binária:
+    -> Pontos do contorno.
+        - São pontos na imagem que fazem a ligação entre o fundo e o objeto.
+        - Para descobrir se um pixel é um ponto de contorno, basta analizar seus 4 vizinhos:
+            * Se, pelo menos, um deles for pixel de fundo, o pixel a ser analizado é um ponto
+de contorno. 
+
+
+
+
