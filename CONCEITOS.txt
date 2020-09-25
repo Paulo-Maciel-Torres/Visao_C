@@ -50,11 +50,29 @@ IMAGENS BINÁRIAS:
 - Imagens binárias são aquelas que possuem apenas duas cores.
 
 Informações possíveis de serem extraídas de uma imagem binária:
-    -> Pontos do contorno.
+    -> Pontos do contorno:
         - São pontos na imagem que fazem a ligação entre o fundo e o objeto.
         - Para descobrir se um pixel é um ponto de contorno, basta analizar seus 4 vizinhos:
             * Se, pelo menos, um deles for pixel de fundo, o pixel a ser analizado é um ponto
-de contorno. 
+de contorno.
+    -> Centróide ou Centro Geométrico:
+        - Ponto central do objeto.
+        - Para descobrir o centróide de um objeto, é necessário somar os valores da posição x
+e y de cada ponto do objeto e depois dividir este valor pela quantidades de pontos no objeto.
+    -> Assinatura:
+        - Distância de cada ponto do contorno até seu centróide.
+    -> Relação de Aspecto:
+        - Proporção entre a largura e altura do retângulo delimitador do objeto.
+        - Definindo largura como maior eixo e altura como menor.
+    -> Solidez:
+        - O quão convexo é um objeto.
+        - Solidez = Área do objeto/áreas das regiões não-convexas.
+        - Como detectar regiões não-convexas:
+            1- Detectar os pontos de extremidade;
+            2- Computar para cada ponto, o seu ângulo. Se o ângulo for maior que 180°, a
+imagem tem áreas não-convexas.
+            3- Traçar uma reta que passa pelos dois pontos entre o ponto onde o ângulo é
+maior que 180°.
 
 
 
